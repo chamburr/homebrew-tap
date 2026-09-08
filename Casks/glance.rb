@@ -1,6 +1,6 @@
 cask "glance" do
-  version "1.5.4"
-  sha256 "f2df114e83b8b834c2da9d4cfbd4d3307a8f0563a9e613bfdd88b4b3bffe61ad"
+  version "1.6.0"
+  sha256 "c18639a8eeaad15d5207fb77ae59574839fecbd6d7f7e204a53a4451500a20cf"
 
   url "https://github.com/chamburr/glance/releases/download/v#{version}/Glance-#{version}.dmg"
   name "Glance"
@@ -11,8 +11,8 @@ cask "glance" do
 
   app "Glance.app"
 
-  postflight do
-    system_command "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "#{appdir}/Glance.app"]
+  postflight_steps do
+    run "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "#{appdir}/Glance.app"]
   end
 
   zap trash: [
