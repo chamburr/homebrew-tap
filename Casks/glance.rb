@@ -7,7 +7,7 @@ cask "glance" do
   desc "🔎 All-in-one Quick Look plugin"
   homepage "https://github.com/chamburr/glance"
 
-  depends_on macos: :big_sur
+  depends_on macos: :sonoma
 
   app "Glance.app"
 
